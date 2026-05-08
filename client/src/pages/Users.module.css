@@ -1,0 +1,38 @@
+.page { max-width: 1000px; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.title  { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--text-primary); }
+.sub    { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.search { max-width: 280px; }
+.center { display: flex; justify-content: center; padding: 60px; }
+.table  { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.tableHead {
+  display: grid; grid-template-columns: 1.5fr 2fr 100px 120px 200px;
+  padding: 12px 20px; border-bottom: 1px solid var(--border);
+  font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
+}
+.row {
+  display: grid; grid-template-columns: 1.5fr 2fr 100px 120px 200px;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+  align-items: center; animation: fadeIn 0.35s ease both; transition: background 0.15s;
+}
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--bg-elevated); }
+.userCell { display: flex; align-items: center; gap: 10px; }
+.avatar {
+  width: 36px; height: 36px; border-radius: var(--radius-sm); flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  display: grid; place-items: center; font-size: 14px; font-weight: 700; color: #fff;
+}
+.userName { font-size: 14px; font-weight: 500; color: var(--text-primary); display: flex; align-items: center; gap: 6px; }
+.you {
+  font-size: 10px; background: var(--accent-glow); color: var(--accent-light);
+  border: 1px solid rgba(99,102,241,0.3); padding: 1px 6px; border-radius: 8px; font-weight: 600;
+}
+.email { font-size: 13px; color: var(--text-secondary); }
+.date  { font-size: 13px; color: var(--text-muted); }
+.actions { display: flex; gap: 8px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (max-width: 768px) {
+  .tableHead { display: none; }
+  .row { grid-template-columns: 1fr; gap: 8px; }
+}
